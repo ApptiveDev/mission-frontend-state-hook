@@ -1,0 +1,53 @@
+.container {
+  position: relative;
+  display: inline-flex;
+
+  label {
+    font-size: 20px;
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+}
+
+.input {
+  font-size: 200px;
+  line-height: 1;
+  height: 200px;
+  width: 2ch;
+  font-family: var(--font-family);
+  font-weight: 800;
+  color: var(--color-text);
+  outline: none;
+  text-align: center;
+
+  background-color: transparent;
+  border: 0;
+
+  &::selection {
+    background-color: var(--color-gray-2);
+    color: var(--color-text);
+  }
+
+  --moz-appearance: textfield;
+  appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &::-webkit-input-placeholder {
+    color: var(--color-gray-2);
+  }
+
+  &:disabled {
+    user-select: none !important;
+
+    &::selection {
+      background-color: transparent;
+    }
+  }
+}

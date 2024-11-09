@@ -1,0 +1,57 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+:root {
+  --font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  user-select: none;
+
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+}
+
+html, body, #root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root[data-theme="brown"] {
+  --color-text: #7C6C56;
+  --color-gray-1: #AC997F;
+  --color-gray-2: #DDC7AA;
+  --color-background: #F1DFC5;
+}
+
+:root[data-theme="slate"] {
+  --color-text: #D6D5DE;
+  --color-gray-1: #85858D;
+  --color-gray-2: #3E3E44;
+  --color-background: #222225;
+}
+
+:root[data-theme="black"] {
+  --color-text: #E6E6E6;
+  --color-gray-1: #8D8D8D;
+  --color-gray-2: #383838;
+  --color-background: #000000;
+}

@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+
+  position: relative;
+}
+
+.indicator {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 1px;
+  background-color: var(--color-text);
+  transition: transform 0.15s, width 0.15s;
+
+  width: var(--width);
+  transform: translateX(var(--translate));
+}
+
+.tab {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font-family);
+  transition: color 0.1s;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  color: var(--color-gray-1);
+
+  &.active {
+    color: var(--color-text);
+  }
+
+  &:hover {
+    color: var(--color-text);
+  }
+}

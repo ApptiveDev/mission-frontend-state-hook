@@ -1,0 +1,7 @@
+.footer {
+  height: 64px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  font-size: 14px;
+  color: var(--color-gray-1);
+}
