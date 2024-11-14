@@ -15,7 +15,7 @@
   transition: transform 0.15s, width 0.15s;
 
   width: var(--width);
-  transform: translateX(var(--translate));
+  transform: translateX(var(--left));
 }
 
 .tab {

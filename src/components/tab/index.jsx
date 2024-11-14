@@ -1,37 +1,41 @@
 import PropTypes from 'prop-types';
 import styles from './styles.module.css';
-import { cloneElement, useEffect, useState } from 'react';
+import { cloneElement, useEffect, useState, forwardRef } from 'react';
 
-export function TabContainer({ children, onChange, index }) {
-  const [indicator, setIndicator] = useState({
-    width: 0,
-    left: 0,
-  });
-  // Ref, State 등 Hooks는 이곳에서 선언하세요.
+export const TabContainer = forwardRef(
+  ({ children, onChange, index }, ref) => {
+    const [indicator, setIndicator] = useState({
+      width: 0,
+      left: 0,
+    });
+    // Ref, State 등 Hooks는 이곳에서 선언하세요.
 
-  useEffect(() => {
-    // 코드를 입력하세요.
-  }, [index]);
+    useEffect(() => {
+      // 코드를 입력하세요.
+    }, [index]);
 
-  return (
-    <div className={styles.container}>
-      {children.map((child, i) =>
-        cloneElement(child, {
-          key: i,
-          active: i === index,
-          onClick: () => onChange(i),
-        }),
-      )}
-      <span
-        className={styles.indicator}
-        style={{
-          '--width': indicator.width.toString() + 'px',
-          '--left': indicator.left.toString() + 'px',
-        }}
-      />
-    </div>
-  );
-}
+    return (
+      <div ref={ref} className={styles.container}>
+        {children.map((child, i) =>
+          cloneElement(child, {
+            key: i,
+            active: i === index,
+            onClick: () => onChange(i),
+          }),
+        )}
+        <span
+          className={styles.indicator}
+          style={{
+            '--width': indicator.width.toString() + 'px',
+            '--left': indicator.left.toString() + 'px',
+          }}
+        />
+      </div>
+    );
+  },
+);
+
+TabContainer.displayName = 'TabContainer';
 
 TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
@@ -51,7 +55,7 @@ export function Tab({ children, active, onClick }) {
 }
 
 Tab.propTypes = {
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired,
-  active: PropTypes.bool.isRequired,
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+  active: PropTypes.bool,
 };
